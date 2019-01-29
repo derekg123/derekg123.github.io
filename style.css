@@ -51,6 +51,10 @@ nav li.currentLink{
   background-color: #000000;
 }
 
+.nav_items{
+  align-items:center;
+}
+
 .osteria img{
   max-height: 100px;
   max-width: 200px;
