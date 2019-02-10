@@ -1,9 +1,12 @@
-html, body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  font-weight: 300;
-  line-height: 1.5;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Adamina';
+  font-size: 24px;
 }
 
 a.skip-main {
@@ -32,6 +35,10 @@ a.skip-main:focus, a.skip-main:active {
     z-index:999;
 }
 
+header{
+  font-family: Impact, Charcoal, sans-serif;
+}
+
 nav {
   background-color: #FFF;
   font-family: "Georgia", sans-serif;
@@ -52,52 +59,48 @@ nav li.currentLink{
 }
 
 .nav_items{
-  align-items:center;
-}
-
-.osteria img{
-  max-height: 100px;
-  max-width: 200px;
-  float:left;
-}
-
-.alinea img{
-  max-height: 100px;
-  max-width: 200px;
-  float: right;
-}
-
-.sukiyabashi img{
-  max-height: 100px;
-  max-width: 200px;
-  float:left;
-}
-
-/*nav{
-  background-color: #FFF;
-
-}
-
-nav li{
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
-}
-
-.nav_text{
   text-align: center;
+  background-image: url("background_test.jpg");
+  background-size: cover;
 }
 
-.restaurants{
-  max-height: 200px;
-  max-width: 200px;
-  position: relative;
-  left: 250px;
+.row{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px;
 }
 
-.restaurants1{
-  max-height: 200px;
-  max-width: 200px;
-  position: relative;
-  right: 250px;
+.nav_items img{
+  width: 300px;
+  height: 200px;
+}
+
+.row h3{
+  color: #FFFFFF;
+}
+
+.row p{
+  color: #FFFFFF;
+}
+
+.gallery_link{
+  font-size: 36px;
+}
+
+.alinea_gallery{
+  display: inline;
+}
+
+.alinea_gallery img{
+  max-width: 300px;
+  max-height: 600px;
+}
+
+#footnote{
+  font-size: 12px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
 }

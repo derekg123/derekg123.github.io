@@ -4,10 +4,13 @@
     <meta charset="utf-8">
     <title>Top Bites</title>
     <link rel="stylesheet" type="text/css" href=style.css>
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
   </head>
   <body>
+
     <a class="skip-main" href="#main" > Skip to Content </a>
-    <header>
+
+  <header>
     <h1>
       Welcome to Top Bites
     </h1>
@@ -18,21 +21,25 @@
 
     <nav>
       <div class="nav_items">
-      <div class="osteria">
-        <a href="osteria.html"><img src="osteria_francescana_logo.jpg" alt="Osteria Francescana logo">
-        <h3>Osteria Francescana</h3>
-        <p>Modena, Italy</p></a>
-      </div>
-      <div class="alinea">
-        <a href="alinea.html"><img src="alinea_logo.jpg" alt="Alinea logo">
-        <h3>Alinea</h3>
-        <p>Chicago, USA</p></a>
-      </div>
-      <div class="sukiyabashi">
-        <a href="sukiyabashi.html"><img src="sukiyabashi_logo.png" alt="Sukiyabashi Jiro logo">
-        <h3>Sukiyabashi Jiro</h3>
-        <p>Tokyo, Japan</p></a>
-      </div>
+
+        <div class="row">
+          <a href="alinea.html"><img src="alinea_logo.jpg" alt="Alinea logo">
+          <h3>Alinea</h3>
+          <p>Chicago, USA</p></a>
+        </div>
+
+        <div class="row">
+          <a href="osteria.html"><img src="osteria_francescana_logo.jpg" alt="Osteria Francescana logo">
+          <h3>Osteria Francescana</h3>
+          <p>Modena, Italy</p></a>
+        </div>
+
+        <div class="row">
+          <a href="sukiyabashi.html"><img src="sukiyabashi_logo.png" alt="Sukiyabashi Jiro logo">
+          <h3>Sukiyabashi Jiro</h3>
+          <p>Tokyo, Japan</p></a>
+        </div>
+
       </div>
       <!--<ul>
         <li><img class="restaurants" src="osteria_francescana_logo.jpg"></li>
@@ -44,12 +51,12 @@
       </ul>-->
     </nav>
     <main>
-    <h4>
+    <h4 id="footnote">
        A brief tour of the best eateries in the world
     </h4>
   </main>
   <footer>
-    <p> This site was created as a project in a course called SI 339.</p>
+    <p id="footnote"> This site was created as a project in a course called SI 339.</p>
   </footer>
   </body>
 </html>
