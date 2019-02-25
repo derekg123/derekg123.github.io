@@ -1,12 +1,12 @@
 *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
 }
 
 body{
   font-family: 'Adamina';
   font-size: 24px;
+  background-image: url("background2.jpg");
+  background-size: cover;
 }
 
 a.skip-main {
@@ -37,10 +37,11 @@ a.skip-main:focus, a.skip-main:active {
 
 header{
   font-family: Impact, Charcoal, sans-serif;
+  text-align: center;
+  color: #FFF;
 }
 
 nav {
-  background-color: #FFF;
   font-family: "Georgia", sans-serif;
 }
 
@@ -58,33 +59,68 @@ nav li.currentLink{
   background-color: #000000;
 }
 
-.nav_items{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.wrapper{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 2fr;
+  grid-gap: 1em;
+  grid-template-areas:
+    "restaurantPic1 restaurantText1"
+    "restaurantText2 restaurantPic2"
+    "restaurantPic3 restaurantText3"
+}
+
+.nav_pic1{
+  grid-area: restaurantPic1;
+  padding: 1em;
+  justify-self: end;
+}
+
+.nav_pic2{
+  grid-area: restaurantPic2;
+  padding: 1em;
+  justify-self: start;
+}
+
+.nav_pic3{
+  grid-area: restaurantPic3;
+  padding: 1em;
+  justify-self: end;
+}
+
+.nav_text1{
+  grid-area: restaurantText1;
+  padding: 1em;
+  font-size: 12pt;
+  color: #FFF;
   text-align: center;
-  background-image: url("background_test.jpg");
-  background-size: cover;
+  justify-self: start;
+  align-self: center;
 }
 
-.row{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 10px;
+.nav_text2{
+  grid-area: restaurantText2;
+  padding: 1em;
+  font-size: 12pt;
+  color: #FFF;
+  text-align: center;
+  justify-self: end;
+  align-self: center;
 }
 
-.nav_items img{
-  width: 300px;
-  height: 200px;
+.nav_text3{
+  grid-area: restaurantText3;
+  padding: 1em;
+  font-size: 12pt;
+  color: #FFF;
+  text-align: center;
+  justify-self: start;
+  align-self: center;
 }
 
-.row h3{
-  color: #FFFFFF;
-}
-
-.row p{
-  color: #FFFFFF;
+.wrapper img{
+  max-width: 200px;
+  max-height: 200px;
 }
 
 .gallery_link{
@@ -103,4 +139,58 @@ nav li.currentLink{
 #footnote{
   font-size: 12px;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+/* TABLET MEDIA QUERY */
+@media screen and (min-width: 768px){
+  .wrapper{
+    grid-template-areas:
+      "restaurantPic1 restaurantText1"
+      "restaurantPic2 restaurantText2"
+      "restaurantPic3 restaurantText3"
+  }
+
+  .wrapper img{
+    max-width: 300px;
+    max-height: 300px;
+  }
+
+  .nav_text1, .nav_text2, .nav_text3{
+    font-size: 16pt;
+  }
+
+  .nav_pic2{
+    justify-self: end;
+  }
+
+  .nav_text2{
+    justify-self: start;
+  }
+}
+
+/* DESKTOP MEDIA QUERY */
+@media screen and (min-width: 1024px){
+  .wrapper{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "restaurantPic1 restaurantPic2 restaurantPic3"
+      "restaurantText1 restaurantText2 restaurantText3"
+  }
+
+  .nav_pic1, .nav_pic2, .nav_pic3{
+    justify-self: center;
+    align-self: center;
+  }
+
+  .nav_text1, .nav_text2, .nav_text3{
+    font-size: 24pt;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .wrapper img{
+    max-width: 400px;
+    max-height: 400px;
+  }
 }
