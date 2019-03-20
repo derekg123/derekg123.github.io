@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 5</title>
+    <style>
+    body{
+        margin: 2%;
+        border: 1px solid black;
+        background-color: #b3b3b3;
+    }
+    #image{
+        line-height:325px;
+        width: 388px;
+        height: 325px;
+        border:5px solid black;
+        margin:0 auto;
+        background-repeat: no-repeat;
+        color:#FFFFFF;
+        text-align: center;
+        background-color: #8e68ff;
+        background-size: 100%;
+        margin-bottom:25px;
+        font-size:150%;
+    }
+    .preview{
+        width:10%;
+        margin-left:17%;
+        border: 10px solid black;
+    }
+    img{
+        width:95%;
+    }
+    h1{
+        text-align: center;
+    }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script>
+    function hoverImage1() {
+      $('#image').css('background-image', 'url(' + $("#img1").attr("src") + ')');
+      $('#image').text($('#img1').attr("alt"));
+    }
+
+    function hoverImage2() {
+      $('#image').css('background-image', 'url(' + $("#img2").attr("src") + ')');
+      $('#image').text($('#img2').attr("alt"));
+    }
+
+    function hoverImage3() {
+      $('#image').css('background-image', 'url(' + $("#img3").attr("src") + ')');
+      $('#image').text($('#img3').attr("alt"));
+    }
+
+    function hoverImage4() {
+      $('#image').css('background-image', 'url(' + $("#img4").attr("src") + ')');
+      $('#image').text($('#img4').attr("alt"));
+    }
+
+    function hoverImage5() {
+      $('#image').css('background-image', 'url(' + $("#img5").attr("src") + ')');
+      $('#image').text($('#img5').attr("alt"));
+    }
+
+    function hoverImage6() {
+      $('#image').css('background-image', 'url(' + $("#img6").attr("src") + ')');
+      $('#image').text($('#img6').attr("alt"));
+    }
+
+    function offImage() {
+        $('#image').removeAttr('style');
+        $('#image').text("Hover or tab over/into an image below.");
+    }
+    </script>
+</head>
+
+<body>
+    <h1>Challenge 5</h1>
+        <div id = "image">
+            Hover or tab over/into an image below.
+        </div>
+
+        <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+        <img class = "preview"
+            alt = "Moo I'm a cow"
+            src = "cow.jfif"
+            id = 'img1'
+            onmouseover = "hoverImage1()"
+            onmouseout="offImage()">
+
+        <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+        <img class = "preview"
+            alt = "Meow I'm a cat"
+            src = "cat.jfif"
+            id = 'img2'
+            onmouseover = "hoverImage2()"
+            onmouseout = "offImage()">
+
+        <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+        <img class = "preview" tabindex = "1"
+            src = "sheep.jfif"
+            id = 'img3'
+            alt = "Baa I'm a sheep"
+            onmouseover = "hoverImage3()"
+            onmouseout = "offImage()">
+
+        <img class = "preview" tabindex = "1"
+            src = "horse.jfif"
+            id = 'img4'
+            alt = "Neeigh I'm a horse"
+            onmouseover = "hoverImage4()"
+            onmouseout = "offImage()">
+
+        <img class = "preview" tabindex = "1"
+            src = "chicken.jfif"
+            id = 'img5'
+            alt = "Cluck I'm a chicken"
+            onmouseover = "hoverImage5()"
+            onmouseout = "offImage()">
+
+        <img class = "preview" tabindex = "1"
+            src = "pig.jfif"
+            id = 'img6'
+            alt = "Oink I'm a pig"
+            onmouseover = "hoverImage6()"
+            onmouseout = "offImage()">
+</body>
+</html>
