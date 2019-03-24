@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Challenge 5</title>
+    <title>Challenge 4</title>
     <style>
     body{
         margin: 2%;
@@ -39,36 +39,58 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <script>
-    function hoverImage1() {
-      $('#image').css('background-image', 'url(' + $("#img1").attr("src") + ')');
-      $('#image').text($('#img1').attr("alt"));
+    function hoverImage(x) {
+        if (x === 1) {
+            $('#image').css('background-image', 'url(' + $("#img1").attr("src") + ')');
+            $('#image').text($('#img1').attr("alt"));
+        }
+        if (x === 2) {
+            $('#image').css('background-image', 'url(' + $("#img2").attr("src") + ')');
+            $('#image').text($('#img2').attr("alt"));
+        }
+        if (x === 3) {
+            $('#image').css('background-image', 'url(' + $("#img3").attr("src") + ')');
+            $('#image').text($('#img3').attr("alt"));
+        }
+        if (x === 4) {
+            $('#image').css('background-image', 'url(' + $("#img4").attr("src") + ')');
+            $('#image').text($('#img4').attr("alt"));
+        }
+        if (x === 5) {
+            $('#image').css('background-image', 'url(' + $("#img5").attr("src") + ')');
+            $('#image').text($('#img5').attr("alt"));
+        }
+        if (x === 6) {
+            $('#image').css('background-image', 'url(' + $("#img6").attr("src") + ')');
+            $('#image').text($('#img6').attr("alt"));
+        }
     }
 
-    function hoverImage2() {
-      $('#image').css('background-image', 'url(' + $("#img2").attr("src") + ')');
-      $('#image').text($('#img2').attr("alt"));
-    }
-
-    function hoverImage3() {
-      $('#image').css('background-image', 'url(' + $("#img3").attr("src") + ')');
-      $('#image').text($('#img3').attr("alt"));
-    }
-
-    function hoverImage4() {
-      $('#image').css('background-image', 'url(' + $("#img4").attr("src") + ')');
-      $('#image').text($('#img4').attr("alt"));
-    }
-
-    function hoverImage5() {
-      $('#image').css('background-image', 'url(' + $("#img5").attr("src") + ')');
-      $('#image').text($('#img5').attr("alt"));
-    }
-
-    function hoverImage6() {
-      $('#image').css('background-image', 'url(' + $("#img6").attr("src") + ')');
-      $('#image').text($('#img6').attr("alt"));
-    }
-
+    // function hoverImage2() {
+    //   $('#image').css('background-image', 'url(' + $("#img2").attr("src") + ')');
+    //   $('#image').text($('#img2').attr("alt"));
+    // }
+    //
+    // function hoverImage3() {
+    //   $('#image').css('background-image', 'url(' + $("#img3").attr("src") + ')');
+    //   $('#image').text($('#img3').attr("alt"));
+    // }
+    //
+    // function hoverImage4() {
+    //   $('#image').css('background-image', 'url(' + $("#img4").attr("src") + ')');
+    //   $('#image').text($('#img4').attr("alt"));
+    // }
+    //
+    // function hoverImage5() {
+    //   $('#image').css('background-image', 'url(' + $("#img5").attr("src") + ')');
+    //   $('#image').text($('#img5').attr("alt"));
+    // }
+    //
+    // function hoverImage6() {
+    //   $('#image').css('background-image', 'url(' + $("#img6").attr("src") + ')');
+    //   $('#image').text($('#img6').attr("alt"));
+    // }
+    //
     function offImage() {
         $('#image').removeAttr('style');
         $('#image').text("Hover or tab over/into an image below.");
@@ -77,7 +99,7 @@
 </head>
 
 <body>
-    <h1>Challenge 5</h1>
+    <h1>Challenge 4</h1>
         <div id = "image">
             Hover or tab over/into an image below.
         </div>
@@ -86,45 +108,57 @@
         <img class = "preview"
             alt = "Moo I'm a cow"
             src = "cow.jfif"
-            id = 'img1'
-            onmouseover = "hoverImage1()"
-            onmouseout="offImage()">
+            id = "img1"
+            tabindex="1"
+            onmouseover = "hoverImage(1)"
+            onmouseout="offImage()"
+            onfocus="hoverImage(1)">
 
         <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
         <img class = "preview"
             alt = "Meow I'm a cat"
             src = "cat.jfif"
-            id = 'img2'
-            onmouseover = "hoverImage2()"
-            onmouseout = "offImage()">
+            id = "img2"
+            tabindex="2"
+            onmouseover = "hoverImage(2)"
+            onmouseout = "offImage()"
+            onfocus="hoverImage(2)">
 
         <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
-        <img class = "preview" tabindex = "1"
+        <img class = "preview"
             src = "sheep.jfif"
-            id = 'img3'
+            id = "img3"
             alt = "Baa I'm a sheep"
-            onmouseover = "hoverImage3()"
-            onmouseout = "offImage()">
+            tabindex="3"
+            onmouseover = "hoverImage(3)"
+            onmouseout = "offImage()"
+            onfocus="hoverImage(3)">
 
-        <img class = "preview" tabindex = "1"
+        <img class = "preview"
             src = "horse.jfif"
-            id = 'img4'
+            id = "img4"
             alt = "Neeigh I'm a horse"
-            onmouseover = "hoverImage4()"
-            onmouseout = "offImage()">
+            tabindex="4"
+            onmouseover = "hoverImage(4)"
+            onmouseout = "offImage()"
+            onfocus="hoverImage(4)">
 
-        <img class = "preview" tabindex = "1"
+        <img class = "preview"
             src = "chicken.jfif"
-            id = 'img5'
+            id = "img5"
             alt = "Cluck I'm a chicken"
-            onmouseover = "hoverImage5()"
-            onmouseout = "offImage()">
+            tabindex="5"
+            onmouseover = "hoverImage(5)"
+            onmouseout = "offImage()"
+            onfocus="hoverImage(5)">
 
-        <img class = "preview" tabindex = "1"
+        <img class = "preview"
             src = "pig.jfif"
-            id = 'img6'
+            id = "img6"
             alt = "Oink I'm a pig"
-            onmouseover = "hoverImage6()"
-            onmouseout = "offImage()">
+            tabindex="6"
+            onmouseover = "hoverImage(6)"
+            onmouseout = "offImage()"
+            onfocus="hoverImage(6)">
 </body>
 </html>
