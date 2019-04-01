@@ -86,6 +86,7 @@
         function startDrawing(e) {
           drawing = true;
           letsDraw(e);
+          console.log("PLEASE")
         }
         function stopDrawing() {
           drawing = false;
@@ -102,13 +103,27 @@
           context.moveTo(e.clientX, e.clientY);
         }
 
+        function touchDraw(e) {
+          var touch = e.touches[0];
+          var xcoord = touch.pageX;
+          var ycoord = touch.pageY;
+          if (!drawing) return;
+          context.lineWidth = y;
+          context.lineCap = 'round';
+          context.lineTo(e.xcoord, e.ycoord);
+          context.strokeStyle = x;
+          context.stroke();
+          context.beginPath();
+          context.moveTo(e.xcoord, e.ycoord);
+        }
+
         $(window).on("orientationchange", function(e) {
           context.clearRect(0, 0, canvas.width, canvas.height);
         });
 
         canvas.addEventListener('touchstart', startDrawing);
-        canvas.addEventListener('touchmove', letsDraw);
         canvas.addEventListener('touchend', stopDrawing);
+        canvas.addEventListener('touchmove', touchDraw);
         canvas.addEventListener('mousedown', startDrawing);
         canvas.addEventListener('mouseup', stopDrawing);
         canvas.addEventListener('mousemove', letsDraw);
