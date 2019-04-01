@@ -104,26 +104,23 @@
         }
 
         function touchDraw(e) {
+          e.preventDefault();
+          e.stopPropagation();
           var touch = e.touches[0];
-          var xcoord = touch.pageX;
-          var ycoord = touch.pageY;
-          if (!drawing) return;
-          context.lineWidth = y;
-          context.lineCap = 'round';
-          context.lineTo(e.xcoord, e.ycoord);
-          context.strokeStyle = x;
-          context.stroke();
-          context.beginPath();
-          context.moveTo(e.xcoord, e.ycoord);
+          var mouseEvent = new MouseEvent("mousemove", {
+            clientX: touch.clientX,
+            clientY: touch.clientY
+          });
+          canvas.dispatchEvent(mouseEvent);
         }
 
         $(window).on("orientationchange", function(e) {
           context.clearRect(0, 0, canvas.width, canvas.height);
         });
 
-        canvas.addEventListener('touchstart', startDrawing);
-        canvas.addEventListener('touchend', stopDrawing);
-        canvas.addEventListener('touchmove', touchDraw);
+        canvas.addEventListener('touchstart', startDrawing, false);
+        canvas.addEventListener('touchend', stopDrawing, false);
+        canvas.addEventListener("touchmove", touchDraw, false);
         canvas.addEventListener('mousedown', startDrawing);
         canvas.addEventListener('mouseup', stopDrawing);
         canvas.addEventListener('mousemove', letsDraw);
