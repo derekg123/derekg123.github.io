@@ -37,6 +37,10 @@ a.skip-main:focus, a.skip-main:active {
     z-index:999;
 }
 
+a:visited {
+  color:#FFF;
+}
+
 header{
   font-family: Impact, Charcoal, sans-serif;
   text-align: center;
