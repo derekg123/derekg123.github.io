@@ -19,32 +19,93 @@
   </header>
 
   <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li class="currentLink">Alinea</li>
-      <li><a href="osteria.html">Osteria Francescana</a></li>
-      <li><a href="sukiyabashi.html">Sukiyabashi Jiro</a></li>
-    </ul>
+    <div id="navbar">
+      <a href="index.html">Home</a>
+      <a href="alinea.html" id="currentLink">Alinea</a>
+      <a href="osteria.html">Osteria Francescana</a>
+      <a href="sukiyabashi.html">Sukiyabashi Jiro</a>
+    </div>
   </nav>
 <main>
+
   <img src="alinea_exterior.jpg" alt="The view from outside">
 
   <h2>Alinea means "the start of a new train of thought".</h2>
   <p>The three Michelin star restaurant located in Chicago, Illinois is helmed by chef Grant Achatz. Alinea focuses on the holistic sensory experience, often praised for its creative and visionary dishes. This can be presented by everything from scented vapors, sizzling charcoal, and tableside preparations. The atmosphere of Alinea is often described as more of a party than an uptight crowd. The feeling of the whimsical dishes are reflected in the service and experience at large.</p>
 
-  <img src="alinea_achatz.jpg" alt="Chef Grant Achatz, the mind behind Alinea">
+<div id='alineaContent'>
+  <!--Modal-->
+
+  <button id="myBtn">Will I enjoy Alinia?</button>
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>You certainly will!</h2>
+      </div>
+      <p>Was there ever any doubt?</p>
+    </div>
+  </div>
+</div>
+
+<div id='achatz'>
+  <img src="alinea_achatz.jpg" alt="Chef Grant Achatz, the mind behind Alinea" style="width:60%">
 
   <span class="fa-stack fa-lg">
     <i class="fa fa-circle fa-stack-2x"></i>
     <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
   </span>
+
   <a href="https://twitter.com/Gachatz"> Chef Achatz's twitter page</a>
 
   <div class="gallery_link">
     <a href="gallery.html"><p>Alinea Gallery</p></a>
   </div>
-
+</div>
 </main>
+<script>
 
+// Modal
+var modal = document.getElementById('myModal');
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+};
+
+document.addEventListener('keyup', function(e) {
+    if (e.keyCode == 27) {
+        modal.style.display = "none";
+    }
+});
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+//Sticky Nav
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
   </body>
 </html>

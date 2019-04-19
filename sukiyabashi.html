@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Sukiyabashi Jiro</title>
     <link rel="stylesheet" type="text/css" href=style.css>
+    <link rel="stylesheet" type="text/css" href=sukiyabashi.css>
     <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
   </head>
 
@@ -17,20 +18,51 @@
 
   </header>
 
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="alinea.html">Alinea</a></li>
-      <li><a href="osteria.html">Osteria Francescana</a></li>
-      <li class="currentLink">Sukiyabashi Jiro</li>
-    </ul>
-  </nav>
+<nav>
+  <div id="navbar">
+    <a href="index.html">Home</a>
+    <a href="alinea.html">Alinea</a>
+    <a href="osteria.html">Osteria Francescana</a>
+    <a href="sukiyabashi.html" id="currentLink">Sukiyabashi Jiro</a>
+  </div>
+</nav>
+
 <main>
-  <img src="sukiyabashi_exterior.jpg" alt="The humble exterior of Sukiyabashi Jiro">
-  <img src="sukiyabashi_omakase.jpg" alt="The omakase tasting menu at Sukiyabashi Jiro">
+
+  <div class="flip-card" tabindex="0">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="sukiyabashi_exterior.jpg" alt="The humble exterior of Sukiyabashi Jiro" style="width:600px;height:600px;">
+    </div>
+    <div class="flip-card-back">
+      <h2>The Sukiyabashi Jiro Interior</h2>
+      <p>Sukiyabashi Jiro isn't about glitz and glam.</p>
+    </div>
+  </div>
+  </div>
 
   <h2>Sukiyabashi Jiro's humble layout, a mere 10-seat counter, is really the forefront of a three Michelin star restaurant...</h2>
   <p>...where Presidents Barack Obama and Shnizo Abe had dined in 2014. Sukiyabashi Jiro is led by sushi master Jiro Ono, a chef who dedicated his life to the art of sushi. The experience at Sukiyabashi Jiro is its Omakase course. Omakase is a Japanese phrase meaning "I'll leave it up to you", and perfectly describes this style of sushi tasting. Every day, Jiro personally designs the 20 piece tasting menu and it is made throughout the day, prepared right in front of the patron.</p>
 </main>
+<script>
+//Sticky Nav
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
   </body>
 </html>
