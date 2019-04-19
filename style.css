@@ -5,8 +5,10 @@
 body{
   font-family: 'Adamina';
   font-size: 24px;
-  background-image: url("background2.jpg");
+  /* background-image: url("background2.jpg"); */
+  background-color: black;
   background-size: cover;
+  color: white;
 }
 
 a.skip-main {
@@ -127,7 +129,7 @@ header{
   color: white;
 }
 
-#footnote{
+.footnote{
   font-size: 12px;
   font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
